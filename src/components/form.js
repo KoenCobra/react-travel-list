@@ -8,7 +8,7 @@ const schema = yup
   })
   .required();
 
-export function Form() {
+export function Form({ onAddItems }) {
   const {
     register,
     handleSubmit,
@@ -26,6 +26,7 @@ export function Form() {
       packed: false,
     };
 
+    onAddItems(newItem);
     reset();
   };
 
